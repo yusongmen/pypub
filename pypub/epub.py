@@ -57,7 +57,7 @@ class _EpubFile(object):
     def _render_template(self, **variable_value_pairs):
         def read_template():
             with open(self.template_file, 'r') as f:
-                template = f.read().decode('utf-8')
+                template = f.read()
             return jinja2.Template(template)
         template = read_template()
         rendered_template = template.render(variable_value_pairs)
